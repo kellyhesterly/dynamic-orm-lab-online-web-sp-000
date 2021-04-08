@@ -62,6 +62,8 @@ class InteractiveRecord
   end
 
   def self.find_by(attribute)
+    value = attribute.values.first
+    fixed_value = value == Fixnum ? value: "#{value}"
     sql = <<-SQL
     SELECT * FROM #{self.table_name} WHERE #{attribute.keys.first} = #{attribute.values.first} LIMIT 1
     SQL
