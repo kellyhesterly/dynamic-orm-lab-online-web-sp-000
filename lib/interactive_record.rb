@@ -56,7 +56,7 @@ class InteractiveRecord
 
   def self.find_by_name(name)
     sql = <<-SQL
-    SELECT * FROM #{table_name_for_insert} WHERE #{col_names_for_insert} = ? LIMIT 1
+    SELECT * FROM #{self.table_name} WHERE #{col_names_for_insert} = ? LIMIT 1
     SQL
     DB[:conn].execute(sql, name)
   end
