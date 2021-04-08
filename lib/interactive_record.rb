@@ -17,6 +17,8 @@ class InteractiveRecord
     end
     column_names.compact
   end
+
+  def initialize
     self.column_names.each do |col_name|
       attr_accessor col_name.to_sym
     end
