@@ -39,5 +39,8 @@ class InteractiveRecord
   end
 
   def values_for_insert
+    values = []
+    attr_accessor.each do |col_name|
+      values <<
   end
 end
