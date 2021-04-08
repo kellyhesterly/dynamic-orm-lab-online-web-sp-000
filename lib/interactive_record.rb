@@ -66,6 +66,6 @@ class InteractiveRecord
     sql = <<-SQL
     SELECT * FROM #{self.table_name} WHERE #{attribute.keys.first} = ? LIMIT 1
     SQL
-    DB[:conn].execute(sql, attribute)
+    DB[:conn].execute(sql)
   end
 end
