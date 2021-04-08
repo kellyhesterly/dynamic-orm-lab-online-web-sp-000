@@ -63,7 +63,7 @@ class InteractiveRecord
 
   def self.find_by(attribute)
     sql = <<-SQL
-    SELECT * FROM #{self.table_name} WHERE #{self.attribute} = ? LIMIT 1
+    SELECT * FROM #{self.table_name} WHERE #{attr_accessor} = ? LIMIT 1
     SQL
     DB[:conn].execute(sql, attribute)
   end
