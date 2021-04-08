@@ -65,7 +65,7 @@ class InteractiveRecord
     value = attribute.values.first
     fixed_value = value == Fixnum ? value: "'#{value}'"
     sql = <<-SQL
-    SELECT * FROM #{self.table_name} WHERE #{attribute.keys.first} = #{attribute.values.first} LIMIT 1
+    SELECT * FROM #{self.table_name} WHERE #{attribute.keys.first} = #{fixed_value LIMIT 1
     SQL
     DB[:conn].execute(sql)
   end
